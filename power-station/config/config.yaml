@@ -1,0 +1,52 @@
+server:
+  port: "8081"
+backend:
+  url: "ws://175.27.250.177:8080"
+  call_type: "webrtc"
+audio:
+  codec: "g722"
+asr:
+  provider: "tencent"
+  language: "zh-CN"
+  sample_rate: 16000
+  app_id: "1368897008"
+  secret_id: "AKIDvkS0LTVPDqLrEbvAJJSXSBh3DG7mLitv"
+  secret_key: "umYN90r483oAR0Tmw6DhFwVvgHj063rU"
+  endpoint: "asr.tencentcloudapi.com"
+  model_type: "16k_zh"
+tts:
+  provider: "tencent"
+  sample_rate: 16000
+  speaker: "601008"
+  speed: 1
+  volume: 10
+  emotion: "jieshuo"
+  app_id: "1368897008"
+  secret_id: "AKIDvkS0LTVPDqLrEbvAJJSXSBh3DG7mLitv"
+  secret_key: "umYN90r483oAR0Tmw6DhFwVvgHj063rU"
+  codec: "pcm"
+  endpoint: "tts.tencentcloudapi.com"
+llm:
+  api_key: "sk-b567571b052b4273a01b28aa8c88564a"
+  model: "qwen-turbo"
+  url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  system_prompt: "You are a helpful assistant. Provide concise responses. Use 'hangup' tool when the conversation is complete."
+vad:
+  model: "silero"
+  endpoint: ""
+  secret_key: ""
+call:
+  break_on_vad: false
+  with_sip: false
+  record: false
+  caller: ""
+  callee: ""
+webhook:
+  addr: ""
+  prefix: "/webhook"
+eou:
+  type: ""
+  endpoint: ""
+database:
+  dsn: "root:123456@tcp(0.0.0.0:3306)/vchatgo?charset=utf8mb4&parseTime=True&loc=Local"
+   
