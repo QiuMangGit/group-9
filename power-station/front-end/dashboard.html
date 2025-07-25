@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能语音对话系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 50px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 3em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .features {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .feature-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .feature-description {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .status {
+            background: linear-gradient(45deg, #2ed573, #1e90ff);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(46, 213, 115, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(46, 213, 115, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(46, 213, 115, 0); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 智能语音对话系统</h1>
+        <div class="status">✅ 系统运行中</div>
+        <p class="subtitle">
+            基于大语言模型和RAG技术的智能语音交互平台<br>
+            支持实时语音识别、自然语言处理和语音合成
+        </p>
+        
+        <div class="features">
+            <a href="index.html" class="feature-card">
+                <div class="feature-icon">🎙️</div>
+                <div class="feature-title">语音对话</div>
+                <div class="feature-description">
+                    与AI进行实时语音对话，支持语音识别和语音合成
+                </div>
+            </a>
+            
+            <a href="rag-admin.html" class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <div class="feature-title">知识库管理</div>
+                <div class="feature-description">
+                    管理RAG知识库，添加、搜索和维护AI的知识内容
+                </div>
+            </a>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <a href="/api/rag/stats" class="btn" target="_blank">📊 查看API状态</a>
+            <a href="https://github.com/your-repo" class="btn" target="_blank">📚 查看文档</a>
+        </div>
+        
+        <div style="margin-top: 40px; color: #999; font-size: 0.9em;">
+            <p>🚀 技术栈：Go + Gin + WebRTC + WebSocket + RAG + LLM</p>
+            <p>💡 支持实时语音交互和知识检索增强生成</p>
+        </div>
+    </div>
+</body>
+</html>

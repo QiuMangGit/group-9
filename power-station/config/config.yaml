@@ -9,9 +9,9 @@ asr:
   provider: "tencent"
   language: "zh-CN"
   sample_rate: 16000
-  app_id: "1368897008"
-  secret_id: "AKIDvkS0LTVPDqLrEbvAJJSXSBh3DG7mLitv"
-  secret_key: "umYN90r483oAR0Tmw6DhFwVvgHj063rU"
+  app_id: ""
+  secret_id: ""
+  secret_key: ""
   endpoint: "asr.tencentcloudapi.com"
   model_type: "16k_zh"
 tts:
@@ -21,16 +21,25 @@ tts:
   speed: 1
   volume: 10
   emotion: "jieshuo"
-  app_id: "1368897008"
-  secret_id: "AKIDvkS0LTVPDqLrEbvAJJSXSBh3DG7mLitv"
-  secret_key: "umYN90r483oAR0Tmw6DhFwVvgHj063rU"
+  app_id: ""
+  secret_id: ""
+  secret_key: ""
   codec: "pcm"
   endpoint: "tts.tencentcloudapi.com"
 llm:
-  api_key: "sk-b567571b052b4273a01b28aa8c88564a"
+  api_key: ""
   model: "qwen-turbo"
   url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
   system_prompt: "You are a helpful assistant. Provide concise responses. Use 'hangup' tool when the conversation is complete."
+# 新增RAG配置
+rag:
+  enabled: true
+  embedding_api: "https://dashscope.aliyuncs.com/compatible-mode/v1/embeddings"
+  embedding_model: "text-embedding-v1"
+  api_key: "sk-b567571b052b4273a01b28aa8c88564a"  # 使用相同的API密钥
+  top_k: 3
+  min_similarity: 0.7
+  chunk_size: 1000
 vad:
   model: "silero"
   endpoint: ""
@@ -49,4 +58,3 @@ eou:
   endpoint: ""
 database:
   dsn: "root:123456@tcp(0.0.0.0:3306)/vchatgo?charset=utf8mb4&parseTime=True&loc=Local"
-   

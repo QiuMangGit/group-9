@@ -30,7 +30,7 @@ type FrontendServer struct {
 	repo          *repository.Repository
 }
 
-func NewFrontendServer(llm *llm.LLMHandler, backendConn *websocket.Conn, backendServer *BackendServer, codec string, asrOption *client.ASROption, ttsOption *client.TTSOption,repo *repository.Repository) *FrontendServer {
+func NewFrontendServer(llm *llm.LLMHandler, backendConn *websocket.Conn, backendServer *BackendServer, codec string, asrOption *client.ASROption, ttsOption *client.TTSOption, repo *repository.Repository) *FrontendServer {
 	return &FrontendServer{
 		upgrader: websocket.Upgrader{
 			CheckOrigin: func(r *http.Request) bool { return true }, // shane: 允许跨域
@@ -422,7 +422,7 @@ func (s *FrontendServer) receiveBackendMessages() {
 							From:    "AI",
 							RobotId: repository.RobotId,
 						}
-						
+
 						if err := s.repo.AddVoiceConversation(&voicdeContent); err != nil {
 							log.Printf("Failed to add conversation: %v", err)
 						}
@@ -438,7 +438,7 @@ func (s *FrontendServer) receiveBackendMessages() {
 								log.Println("Failed to marshal LLM response:", err)
 								continue
 							}
-							
+
 							if err := s.RealTimeConn.WriteMessage(websocket.TextMessage, llmBytes); err != nil {
 								log.Printf("Failed to send LLM response to frontend: %v", err)
 								if websocket.IsCloseError(err, websocket.CloseGoingAway) {
